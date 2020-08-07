@@ -1701,6 +1701,7 @@
                 <option value="flite">Flite</option>
                 <option value="marytts">MaryTTS</option>
                 <option value="wavenet">Google Wavenet</option>
+                <option value="polly">Amazon Polly</option>
                 <option value="opentts">OpenTTS</option>
                 <option value="remote">Remote HTTP</option>
                 <option value="command">Local Command</option>
@@ -1916,6 +1917,56 @@
                 </div>
             </div>
             <!-- End Wavenet -->
+
+            <!-- Polly -->
+            <div x-show="profile.text_to_speech.system == 'polly'">
+                <div class="form-group">
+                    <div class="form-row">
+                        <a target="_blank" href="docs/text-to-speech/#polly">Documentation</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-auto">
+                            <label for="tts-polly-voices" class="col-form-label">Voice:</label>
+                        </div>
+                        <div class="col">
+                            <select id="tts-polly-voices" x-model="profile.text_to_speech.polly.voice" class="form-control">
+                            </select>
+                        </div>
+                        <div class="col-xs-auto">
+                            <button onclick="refreshVoices('polly')" class="btn btn-primary form-control" title="Refresh polly voices">Refresh</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-auto">
+                            <label for="polly-samplerate" class="col-form-label">Sample Rate</label>
+                        </div>
+                        <div class="col">
+                            <select class="form-control" id="polly-samplerate" :disabled="profile.text_to_speech.system != 'polly'" x-model="profile.text_to_speech.polly.sample_rate">
+                                <option value="8000">8000</option>
+                                <option value="11025">11025</option>
+                                <option value="16000">16000</option>
+                                <option value="22050">22050</option>
+                                <option value="44100">44100</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col text-muted">
+                            <ul>
+                                <li>Credentials: <tt>{{ maybe_read_path(profile, "text_to_speech.polly.credentials") }}</tt></li>
+                                <li>WAV cache: <tt>{{ maybe_read_path(profile, "text_to_speech.polly.cache_dir") }}</tt></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Polly -->
 
             <!-- OpenTTS -->
             <div x-show="profile.text_to_speech.system == 'opentts'">
