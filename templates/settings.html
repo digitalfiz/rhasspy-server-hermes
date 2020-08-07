@@ -1942,6 +1942,27 @@
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-auto">
+                            <label for="tts-polly-engine" class="col-form-label">Engine:</label>
+                        </div>
+                        <div class="col">
+                            <select id="tts-polly-engine" x-model="profile.text_to_speech.polly.engine" class="form-control">
+                                <option value="neural">Neural</option>
+                                <option value="standard">Standard</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <label for="polly-region" class="col-form-label">AWS Region:</label>
+                        <div class="col">
+                            <input id="polly-region" type="text" class="form-control" x-model="profile.text_to_speech.polly.region" :disabled="profile.text_to_speech.system != 'polly'">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-auto">
                             <label for="polly-samplerate" class="col-form-label">Sample Rate</label>
                         </div>
                         <div class="col">

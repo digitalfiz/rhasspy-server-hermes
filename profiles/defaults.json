@@ -221,7 +221,7 @@
     },
     "polly": {
       "cache_dir": "tts/polly/cache",
-      "credentials_json": "tts/polly/credentials",
+      "credentials": "tts/polly/credentials.ini",
       "language_code": "en-US",
       "sample_rate": 22050,
       "voice": "Joanna",
