@@ -25,6 +25,9 @@
     "wavenet": {
       "language_code": "en-US"
     },
+    "polly": {
+      "language_code": "en-US"
+    },
     "marytts": {
       "locale": "en-US"
     }

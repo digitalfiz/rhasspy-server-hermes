@@ -219,6 +219,14 @@
       "voice": "Wavenet-C",
       "fallback_tts": "espeak"
     },
+    "polly": {
+      "cache_dir": "tts/polly/cache",
+      "credentials_json": "tts/polly/credentials",
+      "language_code": "en-US",
+      "sample_rate": 22050,
+      "voice": "Joanna",
+      "fallback_tts": "espeak"
+    },
     "hass_tts": {
       "platform": ""
     }
